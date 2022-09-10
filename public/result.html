@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ::::::::::::::::stylesheet:::::::::::::::: -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- ::::::::::::::::google fonts:::::::::::::::: -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <title>Test Studio Results page</title>
+  </head>
+
+  <body>
+    <!-- ::::::::::::::::navbar:::::::::::::::: -->
+    <nav class="w-full bg-nav h-12 bg-cover mix-blend-overlay bg-[#4287DE] flex justify-between items-center gap-5 px-3.5">
+      <div class="flex items-center gap-4">
+        <img src="./assets/images/Logo.svg" alt="logo" class="w-auto h-auto object-contain" />
+        <a href="#" class="text-lg font-bold text-white">Test Studio</a>
+      </div>
+      <div class="flex items-center gap-3 lg:block">
+        <button class="flex items-center gap-1.5">
+          <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99996 2.98979C8.61925 2.98979 7.49996 4.10907 7.49996 5.48979C7.49996 6.8705 8.61925 7.98979 9.99996 7.98979C11.3807 7.98979 12.5 6.8705 12.5 5.48979C12.5 4.10907 11.3807 2.98979 9.99996 2.98979ZM5.83329 5.48979C5.83329 3.1886 7.69877 1.32312 9.99996 1.32312C12.3011 1.32312 14.1666 3.1886 14.1666 5.48979C14.1666 7.79097 12.3011 9.65645 9.99996 9.65645C7.69877 9.65645 5.83329 7.79097 5.83329 5.48979ZM1.66663 18.8231C1.66663 14.2208 5.3976 10.4898 9.99996 10.4898C14.6023 10.4898 18.3333 14.2208 18.3333 18.8231C18.3333 19.2834 17.9602 19.6565 17.5 19.6565C17.0397 19.6565 16.6666 19.2834 16.6666 18.8231C16.6666 15.5366 14.2885 12.8055 11.1592 12.2569L12.4631 16.4947C12.5442 16.7583 12.4896 17.045 12.3174 17.2604L10.6507 19.3437C10.4925 19.5414 10.2531 19.6565 9.99996 19.6565C9.74681 19.6565 9.50738 19.5414 9.34924 19.3437L7.68257 17.2604C7.51027 17.045 7.4557 16.7583 7.53681 16.4947L8.84076 12.2569C5.71144 12.8055 3.33329 15.5366 3.33329 18.8231C3.33329 19.2834 2.9602 19.6565 2.49996 19.6565C2.03972 19.6565 1.66663 19.2834 1.66663 18.8231ZM9.99996 14.1568L9.25943 16.5635L9.99996 17.4891L10.7405 16.5635L9.99996 14.1568Z" fill="white" />
+          </svg>
+          <svg width="6" height="3" viewBox="0 0 6 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.931005 0.254003C1.06118 0.123828 1.27223 0.123828 1.40241 0.254003L3.16671 2.0183L4.93101 0.254003C5.06118 0.123828 5.27223 0.123828 5.40241 0.254003C5.53258 0.384178 5.53258 0.595233 5.40241 0.725408L3.40241 2.72541C3.27223 2.85558 3.06118 2.85558 2.93101 2.72541L0.931005 0.725408C0.80083 0.595233 0.80083 0.384178 0.931005 0.254003Z" fill="white" />
+          </svg>
+        </button>
+        <button class="btn-toggle group text-white lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6 fill-current group-open:hidden block">
+            <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-6 h-6 fill-current group-open:block hidden">
+            <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="h-[calc(100vh-48px)] overflow-auto bg-[#f6f6f6] pb-5">
+      <!-- ::::::::::::::::page body:::::::::::::::: -->
+      <main class="w-full grid grid-cols-1 grid-rows-[min-content_1fr] lg:grid-rows-none lg:grid-cols-[minmax(180px,220px),minmax(470px,1fr)] lg:gap-[30px]">
+        <aside class="sidebar bg-white w-full lg:h-full transition-all duration-300 origin-top max-h-0 overflow-auto invisible pointer-events-none open:pointer-events-auto open:visible lg:visible lg:pointer-events-auto open:max-h-screen lg:max-h-full">
+          <ul>
+            <li class="relative">
+              <a href="#" class="dropdown-link text-sm leading-[45px] text-blue-dark flex justify-between items-center gap-4 px-5 border-b borders">
+                <span>Fund Name </span>
+                <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#a)">
+                    <path d="m7 10 5 5 5-5H7Z" fill="#4286DD" />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h24v24H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <ul class="dropdown">
+                <li>
+                  <a href="#" class="text-sm leading-9 text-blue-dark capitalize">someThing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-9 text-blue-dark capitalize">someThing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-9 text-blue-dark capitalize">someThing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-9 text-blue-dark capitalize">someThing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-9 text-blue-dark capitalize">someThing</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="px-3 mt-4">
+            <li class="mb-1.5">
+              <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:text-white hover:bg-blue-600 w-full inline-block px-4">Models</a>
+            </li>
+            <li class="mb-1.5">
+              <a href="#" class="dropdown-link text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:text-white hover:bg-blue-600 w-full inline-block px-4 main-menu-active">Model X</a>
+              <ul class="mt-1.5 dropdown pl-0">
+                <li class="mb-1.5">
+                  <a href="#" class="dropdown-link text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#d3e6f8] w-full inline-block pl-4 sub-menu-active">Anchor</a>
+                  <ul class="pl-5 mt-1.5 dropdown pr-0">
+                    <li class="mb-1.5">
+                      <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#f7f1f1] w-full inline-block px-4">Upload File</a>
+                    </li>
+                    <li class="mb-1.5">
+                      <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#f7f1f1] w-full inline-block px-4">Data Analysis</a>
+                    </li>
+                    <li class="mb-1.5">
+                      <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#f7f1f1] w-full inline-block px-4">Features Analysis</a>
+                    </li>
+                    <li class="mb-1.5">
+                      <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#f7f1f1] w-full inline-block px-4 tertiory-menu-active">Results Analysis</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="mb-1.5">
+                  <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#d3e6f8] w-full inline-block px-4">Modifier</a>
+                </li>
+                <li class="mb-1.5">
+                  <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#d3e6f8] w-full inline-block px-4"> Model Configuration</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </aside>
+        <!-- ::::::::::::::::right side of the page:::::::::::::::: -->
+        <div class="w-full pt-5 lg:pt-[30px] px-5 lg:pl-0 lg pr-4:md:pr-[30px] h-[calc(100%-34px)]">
+          <ul class="flex items-center gap-1.5 mb-3">
+            <li>
+              <a href="#" class="text-xs text-blue-dark font-normal">Anchors</a>
+            </li>
+            <li class="text-[#9C9C9C]">/</li>
+            <li>
+              <a href="#" class="text-xs text-[#9C9C9C] font-normal">Results Analysis</a>
+            </li>
+          </ul>
+
+          <!-- ::::::::::::::::Activation modal result:::::::::::::::: -->
+          <div class="p-4 md:p-8 bg-white w-full border border-[#e5e5e5] mb-[30px]">
+            <button class="text-lg sm:text-[22px] leading-none font-bold capitalize mb-[46px] tracking-[0.25px] flex justify-between w-full">
+              <span>Aviation Model Results</span>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1 7.9L12.5 6.5L6.5 0.5L0.5 6.5L1.9 7.9L6.5 3.3L11.1 7.9Z" fill="#010101" />
+              </svg>
+            </button>
+            <!-- ::::::::::::::::box of the results:::::::::::::::: -->
+            <div class="w-full grid sm:grid-cols-2 xl:grid-cols-4 gap-0 xl:gap-2">
+              <div class="text-center sm:border-r border-b xl:border-b-0 pb-6 xl:pb-0 border-[#e5e5e5]">
+                <h5 class="text-base leading-5 font-semibold">Total Model Score</h5>
+                <p class="font-semibold text-[40px] leading-[49px] text-[#0DCF83] mt-[15px] text-center">91%</p>
+                <p class="text-xs leading-[15px] text-[#9C9C9C] font-normal max-w-[280px] w-full mx-auto mt-[18px]">A score combining the model’s default rate and the missed loans rate.</p>
+              </div>
+              <div class="text-center pt-5 sm:pt-0 border-b pb-6 xl:border-b-0 xl:pb-0 xl:border-r border-[#e5e5e5]">
+                <h5 class="text-base leading-5 font-semibold">Default Rate</h5>
+                <p class="font-semibold text-[40px] leading-[49px] text-[#0DCF83] mt-[15px] text-center">4.1%</p>
+                <p class="text-xs leading-[15px] text-[#9C9C9C] font-normal max-w-[280px] w-full mx-auto mt-[18px]">95.9% of the loans that were recommended by the model, turned out to be successful</p>
+              </div>
+              <div class="text-center sm:border-r border-b pb-6 sm:border-b-0 border-[#e5e5e5] pt-5 xl:pt-0">
+                <h5 class="text-base leading-5 font-semibold">Missed Loans Rate</h5>
+                <p class="font-semibold text-[40px] leading-[49px] text-[#ED5554] mt-[15px] text-center">3.3%</p>
+                <p class="text-xs leading-[15px] text-[#9C9C9C] font-normal max-w-[280px] w-full mx-auto mt-[18px]">The model recommended to provide a loan for 96.7% of all the successful loans.</p>
+              </div>
+              <div class="text-center pt-5 xl:pt-0">
+                <h5 class="text-base leading-5 font-semibold">Avoided defaults</h5>
+                <p class="font-semibold text-[40px] leading-[49px] text-[#0DCF83] mt-[15px] text-center">26/30</p>
+                <p class="text-xs leading-[15px] text-[#9C9C9C] font-normal max-w-[280px] w-full mx-auto mt-[18px]">Default rate was reduced by 25.9% points from 30% to 4.1%.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ::::::::::::::::Results Analysis:::::::::::::::: -->
+          <div class="bg-white w-full border border-[#e5e5e5] mb-[30px]">
+            <h2 class="text-lg sm:text-[22px] leading-none font-bold capitalize tracking-[0.25px] flex justify-between w-full p-4 md:p-8 border-b border-[#e5e5e5] mb-8">Results Analysis</h2>
+            <div class="p-4 md:p-8">
+              <h2 class="font-semibold text-base leading-5">Probability of Default Accuracy</h2>
+              <p class="font-normal text-[13px] leading-5 text-[#4f4f4f] max-w-[626px] w-full mt-4 mb-[26px]">The model predicts the total risk that is a ssociated with making an investment in the company. Compare the estimated risk of companies in the test set with the default rate outcome:</p>
+              <div class="w-full grid grid-cols-1 xl:grid-cols-[minmax(500px,1fr),minmax(100px,260px)] 2xl:grid-cols-[minmax(500px,1060px),minmax(250px,460px)] gap-10">
+                <div class="w-full overflow-auto pb-5 md:pb-0">
+                  <table class="rounded-tr-sm w-[768px] md:w-full border border-[#e5e5e5]">
+                    <thead class="w-full">
+                      <th class="text-sm leading-[22px] font-normal font-mont px-4 2xl:px-[30px] py-3.5 bg-[#F1F8FF] text-left">Risk Level</th>
+                      <th class="text-sm leading-[22px] font-normal font-mont px-4 2xl:px-[30px] py-3.5 bg-[#F1F8FF] text-left">No. of companies</th>
+                      <th class="text-sm leading-[22px] font-normal font-mont px-4 2xl:px-[30px] py-3.5 bg-[#F1F8FF] text-left">No. of defaults</th>
+                      <th class="text-sm leading-[22px] font-normal font-mont px-4 2xl:px-[30px] py-3.5 bg-[#F1F8FF] text-left">Predicted vs. Actual</th>
+                    </thead>
+                    <tbody>
+                      <tr class="border-b border-[#e5e5e5]">
+                        <td class="font-semibold leading-[47px] text-[13px] font-mont px-[30px]">L1</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">50</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">1</td>
+                        <td class="font-normal text-[13px] font-mont px-[30px]">
+                          <div class="flex items-center gap-1">
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">0%</span>
+                            <div class="max-w-[85px] w-full relative">
+                              <div class="rounded-[10px] border border-[#e5e5e5] w-full h-2.5 grid grid-cols-4 pb-[3px]">
+                                <span class="w-full border-r border-[#e5e5e5]"></span>
+                                <span class="w-full border-r border-[#e5e5e5]"></span>
+                                <span class="w-full border-r border-[#e5e5e5]"> </span>
+                                <span class="relative">
+                                  <span class="w-[9px] h-[9px] bg-[#4CAF50] inline-block absolute top-0 right-1 clip-path-box"></span>
+                                </span>
+                              </div>
+                              <span class="absolute top-full right-0 inline-block text-[10px] font-normal text-[#4CAF50] leading-4">0.35%</span>
+                            </div>
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">0.4%</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5]">
+                        <td class="font-semibold leading-[47px] text-[13px] font-mont px-[30px]">L2</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">50</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">2</td>
+                        <td class="font-normal text-[13px] font-mont px-[30px]">
+                          <div class="flex items-center gap-1">
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">0.4%</span>
+                            <div class="max-w-[85px] w-full relative">
+                              <div class="rounded-[10px] border border-[#e5e5e5] w-full h-2.5 grid grid-cols-4 pb-[3px]">
+                                <span class="w-full border-r border-[#e5e5e5]"></span>
+                                <span class="w-full border-r border-[#e5e5e5]"></span>
+                                <span class="w-full border-r border-[#e5e5e5]"> </span>
+                              </div>
+                            </div>
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F] flex items-center gap-2.5">
+                              <span>0.8%</span>
+                              <span class="relative">
+                                <span class="w-[9px] h-[9px] bg-[#ED5554] block clip-path-box"></span>
+                                <span class="absolute top-full -left-1.5 text-[10px] font-normal text-[#ED5554] leading-4">0.85%</span>
+                              </span>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5]">
+                        <td class="font-semibold leading-[47px] text-[13px] font-mont px-[30px]">L3</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">50</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">1</td>
+                        <td class="font-normal text-[13px] font-mont px-[30px]">
+                          <div class="flex items-center gap-1">
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">0.8%</span>
+                            <div class="max-w-[85px] w-full relative">
+                              <div class="rounded-[10px] border border-[#e5e5e5] w-full h-2.5 grid grid-cols-4 pb-[3px]">
+                                <span class="w-full border-r border-[#e5e5e5]"></span>
+                                <span class="w-full border-r border-[#e5e5e5] relative"> </span>
+                                <span class="w-full border-r border-[#e5e5e5] relative">
+                                  <span class="w-[9px] h-[9px] bg-[#4CAF50] inline-block absolute top-0 right-[5px] clip-path-box"></span>
+                                </span>
+                                <span class="absolute top-full right-5 inline-block text-[10px] font-normal text-[#4CAF50] leading-4">0.9%</span>
+                              </div>
+                            </div>
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">1%</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5]">
+                        <td class="font-semibold leading-[47px] text-[13px] font-mont px-[30px]">L4</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">50</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">4</td>
+                        <td class="font-normal text-[13px] font-mont px-[30px]">
+                          <div class="flex items-center gap-1">
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">1%</span>
+                            <div class="max-w-[85px] w-full relative">
+                              <div class="rounded-[10px] border border-[#e5e5e5] w-full h-2.5 grid grid-cols-4 pb-[3px]">
+                                <span class="w-full border-r border-[#e5e5e5]"></span>
+                                <span class="w-full border-r border-[#e5e5e5] relative"> </span>
+                                <span class="w-full border-r border-[#e5e5e5] relative">
+                                  <span class="w-[9px] h-[9px] bg-[#4CAF50] inline-block absolute top-0 left-0 clip-path-box"></span>
+                                </span>
+                                <span class="absolute top-full right-5 inline-block text-[10px] font-normal text-[#4CAF50] leading-4">1.35%</span>
+                              </div>
+                            </div>
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">1.5%</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5]">
+                        <td class="font-semibold leading-[47px] text-[13px] font-mont px-[30px]">L5</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">50</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">4</td>
+                        <td class="font-normal text-[13px] font-mont px-[30px]">
+                          <div class="flex items-center gap-1">
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">1.5%</span>
+                            <div class="max-w-[85px] w-full relative">
+                              <div class="rounded-[10px] border border-[#e5e5e5] w-full h-2.5 grid grid-cols-4 pb-[3px]">
+                                <span class="w-full border-r border-[#e5e5e5]"></span>
+                                <span class="w-full border-r border-[#e5e5e5]"></span>
+                                <span class="w-full border-r border-[#e5e5e5]"> </span>
+                                <span class="relative">
+                                  <span class="w-[9px] h-[9px] bg-[#4CAF50] inline-block absolute top-0 right-1 clip-path-box"></span>
+                                </span>
+                              </div>
+                              <span class="absolute top-full right-0 inline-block text-[10px] font-normal text-[#4CAF50] leading-4">2.75%</span>
+                            </div>
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">3%</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5]">
+                        <td class="font-semibold leading-[47px] text-[13px] font-mont px-[30px]">L6</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">50</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">3</td>
+                        <td class="font-normal text-[13px] font-mont px-[30px]">
+                          <div class="flex items-center gap-1">
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">3.2%</span>
+                            <div class="max-w-[85px] w-full relative">
+                              <div class="rounded-[10px] border border-[#e5e5e5] w-full h-2.5 grid grid-cols-4 pb-[3px]">
+                                <span class="w-full border-r border-[#e5e5e5]"></span>
+                                <span class="w-full border-r border-[#e5e5e5]"></span>
+                                <span class="w-full border-r border-[#e5e5e5]"> </span>
+                              </div>
+                            </div>
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F] flex items-center gap-2.5">
+                              <span>4.2%</span>
+                              <span class="relative">
+                                <span class="w-[9px] h-[9px] bg-[#ED5554] block clip-path-box"></span>
+                                <span class="absolute top-full -left-1.5 text-[10px] font-normal text-[#ED5554] leading-4">5.3%</span>
+                              </span>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5]">
+                        <td class="font-semibold leading-[47px] text-[13px] font-mont px-[30px]">L7</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">50</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">1</td>
+                        <td class="font-normal text-[13px] font-mont px-[30px]">
+                          <div class="flex items-center gap-1">
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F] flex items-center gap-2.5">
+                              <span class="relative">4.2%</span>
+                              <span class="relative">
+                                <span class="w-[9px] h-[9px] bg-[#ED5554] block clip-path-box"></span>
+                                <span class="absolute top-full -left-1.5 text-[10px] font-normal text-[#ED5554] leading-4">3.15%</span>
+                              </span>
+                            </span>
+                            <div class="max-w-[85px] w-full relative">
+                              <div class="rounded-[10px] border border-[#e5e5e5] w-full h-2.5 grid grid-cols-4 pb-[3px]">
+                                <span class="w-full border-r border-[#e5e5e5]"></span>
+                                <span class="w-full border-r border-[#e5e5e5]"></span>
+                                <span class="w-full border-r border-[#e5e5e5]"> </span>
+                              </div>
+                            </div>
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F] flex items-center gap-2.5">
+                              <span class="relative">6%</span>
+                            </span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5]">
+                        <td class="font-semibold leading-[47px] text-[13px] font-mont px-[30px]">L8</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">50</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">1</td>
+                        <td class="font-normal text-[13px] font-mont px-[30px]">
+                          <div class="flex items-center gap-1">
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">6%</span>
+                            <div class="max-w-[85px] w-full relative">
+                              <div class="rounded-[10px] border border-[#e5e5e5] w-full h-2.5 grid grid-cols-4 pb-[3px]">
+                                <span class="w-full border-r border-[#e5e5e5]"> </span>
+                                <span class="w-full border-r border-[#e5e5e5] relative">
+                                  <span class="absolute top-[180%] right-0 inline-block text-[10px] font-normal text-[#4CAF50] leading-4">7.9%</span>
+                                  <span class="w-[9px] h-[9px] bg-[#4CAF50] inline-block absolute top-0 right-[5px] clip-path-box"></span>
+                                </span>
+                                <span class="w-full border-r border-[#e5e5e5] relative"> </span>
+                                <span></span>
+                              </div>
+                            </div>
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">8%</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5]">
+                        <td class="font-semibold leading-[47px] text-[13px] font-mont px-[30px]">L9</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">50</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">1</td>
+                        <td class="font-normal text-[13px] font-mont px-[30px]">
+                          <div class="flex items-center gap-1">
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">8%</span>
+                            <div class="max-w-[85px] w-full relative">
+                              <div class="rounded-[10px] border border-[#e5e5e5] w-full h-2.5 grid grid-cols-4 pb-[3px]">
+                                <span class="w-full border-r border-[#e5e5e5]"> </span>
+                                <span class="w-full border-r border-[#e5e5e5] relative">
+                                  <span class="absolute top-[180%] left-0 inline-block text-[10px] font-normal text-[#4CAF50] leading-4">8.55%</span>
+                                  <span class="w-[9px] h-[9px] bg-[#4CAF50] inline-block absolute top-0 left-0 clip-path-box"></span>
+                                </span>
+                                <span class="w-full border-r border-[#e5e5e5] relative"> </span>
+                                <span></span>
+                              </div>
+                            </div>
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">9.5%</span>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5]">
+                        <td class="font-semibold leading-[47px] text-[13px] font-mont px-[30px]">L10</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">50</td>
+                        <td class="font-normal leading-[47px] text-[13px] font-mont px-[30px]">1</td>
+                        <td class="font-normal text-[13px] font-mont px-[30px]">
+                          <div class="flex items-center gap-1">
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">9.5%</span>
+                            <div class="max-w-[85px] w-full relative">
+                              <div class="rounded-[10px] border border-[#e5e5e5] w-full h-2.5 grid grid-cols-4 pb-[3px]">
+                                <span class="w-full border-r border-[#e5e5e5]"> </span>
+                                <span class="w-full border-r border-[#e5e5e5] relative"> </span>
+                                <span class="w-full border-r border-[#e5e5e5] relative">
+                                  <span class="absolute top-[180%] left-0 inline-block text-[10px] font-normal text-[#4CAF50] leading-4">10.55%</span>
+                                  <span class="w-[9px] h-[9px] bg-[#4CAF50] inline-block absolute top-0 left-0 clip-path-box"></span>
+                                </span>
+                                <span></span>
+                              </div>
+                            </div>
+                            <span class="text-[10px] leading-4 font-normal text-[#4F4F4F]">X%</span>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="w-full">
+                  <p class="text-center p-5 text-base font-normal leading-[22px] text-black h-[119px] border border-[#cccccc]">TBD</p>
+                </div>
+              </div>
+            </div>
+            <!-- ::::::::::::::::test data anaylsis:::::::::::::::: -->
+            <div class="px-3 sm:px-8 mb-6">
+              <div class="md:p-8 pb-12 sm:pb-[75px] border-b border-[#e5e5e5]">
+                <h2 class="text-[22px] leading-none font-bold capitalize tracking-[0.25px] flex justify-between w-full border-t border-[#e5e5e5] mb-5 pt-12 px-5 sm:px-0">Test Data Analysis</h2>
+                <p class="text-[13px] leading-4 font-normal text-[#4f4f4f] mb-9 px-5 sm:px-0">The model accuracy was tested based on an unseen portion of the dataset (30%). Below are the results of this test:</p>
+                <div class="max-w-[600px] w-full">
+                  <p class="text-[13px] font-semibold text-[#4f4f4f] leading-4 text-center">Predicted Result</p>
+                  <div class="w-full grid sm:grid-cols-[24px,1fr] gap-2 mt-2.5 items-center">
+                    <p class="text-[13px] leading-6 text-[#4f4f4f] font-semibold whitespace-nowrap sm:transform sm:-rotate-90 sm:mt-12">Actual Result</p>
+                    <div class="w-full grid sm:grid-cols-2 gap-2.5">
+                      <div class="flex items-end">
+                        <div class="h-[calc(100%-24px)] flex items-center">
+                          <p class="text-[13px] leading-6 text-[#4f4f4f] font-semibold transform -rotate-90 w-6 mt-5 hidden sm:inline-block">Success</p>
+                        </div>
+                        <div class="sm:max-w-[260px] w-full">
+                          <p class="text-[13px] leading-6 text-[#4f4f4f] font-normal text-center">Success</p>
+                          <div class="w-full border-2 border-[#0DCF83] rounded-[3px] py-[18px] px-4 text-center">
+                            <p class="text-[13px] leading-6 text-black font-normal">True “Success” Predictions</p>
+                            <p class="font-medium text-base leading-4 text-black my-5 text-center">353 deals</p>
+                            <p class="text-[13px] leading-6 text-black font-normal">67.6% of predicted results</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="w-full">
+                        <p class="text-[13px] leading-6 text-[#4f4f4f] font-normal text-center">Default</p>
+                        <div class="w-full border-2 border-[#ED5554] rounded-[3px] py-[18px] px-4 text-center">
+                          <p class="text-[13px] leading-6 text-black font-normal">False “Default” Predictions</p>
+                          <p class="font-medium text-base leading-4 text-black my-5 text-center">12 deals</p>
+                          <p class="text-[13px] leading-6 text-black font-normal">2.3% of predicted results</p>
+                        </div>
+                      </div>
+                      <div class="flex items-end order-4 sm:order-3">
+                        <div class="h-[calc(100%-24px)] flex items-center">
+                          <p class="text-[13px] leading-6 text-[#4f4f4f] font-semibold transform -rotate-90 w-6 hidden sm:inline-block">Default</p>
+                        </div>
+                        <div class="sm:max-w-[260px] w-full">
+                          <p class="text-[13px] leading-6 text-[#4f4f4f] font-normal text-center sm:hidden">Default</p>
+                          <div class="w-full border-2 border-[#ED5554] rounded-[3px] py-[18px] px-4 text-center">
+                            <p class="text-[13px] leading-6 text-black font-normal">False “Success” Predictions</p>
+                            <p class="font-medium text-base leading-4 text-black my-5 text-center">15 deals</p>
+                            <p class="text-[13px] leading-6 text-black font-normal">2.9% of predicted results</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="w-full order-3 sm:order-4">
+                        <p class="text-[13px] leading-6 text-[#4f4f4f] font-normal text-center sm:hidden">Success</p>
+                        <div class="w-full border-2 border-[#0DCF83] rounded-[3px] py-[18px] px-4 text-center">
+                          <p class="text-[13px] leading-6 text-black font-normal">True “Default” Predictions</p>
+                          <p class="font-medium text-base leading-4 text-black my-5 text-center">142 deals</p>
+                          <p class="text-[13px] leading-6 text-black font-normal">27.2% of predicted results</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-5 flex items-center gap-1.5 max-w-[506px] w-full mx-auto">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1002_84342)">
+                        <path d="M6.41663 4.08332H7.58329V5.24999H6.41663V4.08332ZM6.41663 6.41666H7.58329V9.91666H6.41663V6.41666ZM6.99996 1.16666C3.77996 1.16666 1.16663 3.77999 1.16663 6.99999C1.16663 10.22 3.77996 12.8333 6.99996 12.8333C10.22 12.8333 12.8333 10.22 12.8333 6.99999C12.8333 3.77999 10.22 1.16666 6.99996 1.16666ZM6.99996 11.6667C4.42746 11.6667 2.33329 9.57249 2.33329 6.99999C2.33329 4.42749 4.42746 2.33332 6.99996 2.33332C9.57246 2.33332 11.6666 4.42749 11.6666 6.99999C11.6666 9.57249 9.57246 11.6667 6.99996 11.6667Z" fill="#4286DD" />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_1002_84342">
+                          <rect width="14" height="14" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <p class="font-normal text-[13px] leading-[15px] text-[#4F4F4F]">The optimal probability threshold of the current model is: 20 <a href="#" class="text-[#4286DD]"> Learn more</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- -----[TABLE AND COMPANY]----- -->
+            <div class="p-4 md:p-8">
+              <p class="font-normal text-[13px] leading-5 text-[#4f4f4f] max-w-[626px] w-full mt-4 mb-5">Lorem, ipsum</p>
+              <div class="w-full grid xl:grid-cols-[minmax(500px,896px),minmax(250px,665px)] xl:h-[600px] gap-6 xl:gap-0">
+                <div class="w-full overflow-auto border-b border-[#E5E5E5] h-[500px] xl:h-full">
+                  <table class="rounded-tr-sm w-full border border-[#e5e5e5] border-collapse">
+                    <thead class="w-full">
+                      <th class="text-sm leading-[22px] font-normal font-mont border-b border-b-[#4287DE] pl-4 md:pl-[30px] pr-4 py-3.5 bg-[#F1F8FF] text-left">Loan Id</th>
+                      <th class="text-sm leading-[22px] font-normal font-mont border-b border-b-[#4287DE] px-4 py-3.5 bg-[#F1F8FF] text-left">Company Name</th>
+                      <th class="text-sm leading-[22px] font-normal font-mont border-b border-b-[#4287DE] px-4 py-3.5 bg-[#F1F8FF] text-left">Class</th>
+                      <th class="text-sm leading-[22px] font-normal font-mont border-b border-b-[#4287DE] px-4 py-3.5 bg-[#F1F8FF] text-left">Predicted value</th>
+                      <th class="text-sm leading-[22px] font-normal font-mont border-b border-b-[#4287DE] px-4 py-3.5 bg-[#F1F8FF] text-left">Actual Value</th>
+                      <th class="text-sm leading-[22px] font-normal font-mont border-b border-b-[#4287DE] pr-4 md:pr-[30px] pl-4 py-3.5 bg-[#F1F8FF] text-left">
+                        <div class="flex gap-1.5 items-center">
+                          Model Performance
+                          <button>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M11.3334 6.00002L10.3934 5.06002L6.66675 8.78002V0.666687H5.33341V8.78002L1.61341 5.05335L0.666748 6.00002L6.00008 11.3334L11.3334 6.00002Z" fill="#010101" />
+                            </svg>
+                          </button>
+                        </div>
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#FFD9D9" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27793 6.27799C6.53262 6.0233 6.94555 6.0233 7.20024 6.27799L9.99996 9.07771L12.7997 6.27799C13.0544 6.0233 13.4673 6.0233 13.722 6.27799C13.9767 6.53268 13.9767 6.94562 13.722 7.20031L10.9223 10L13.722 12.7997C13.9767 13.0544 13.9767 13.4674 13.722 13.722C13.4673 13.9767 13.0544 13.9767 12.7997 13.722L9.99996 10.9223L7.20024 13.722C6.94555 13.9767 6.53262 13.9767 6.27793 13.722C6.02324 13.4674 6.02324 13.0544 6.27793 12.7997L9.07764 10L6.27793 7.20031C6.02324 6.94562 6.02324 6.53268 6.27793 6.27799Z" fill="#DD4D4D" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#FFD9D9" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27793 6.27799C6.53262 6.0233 6.94555 6.0233 7.20024 6.27799L9.99996 9.07771L12.7997 6.27799C13.0544 6.0233 13.4673 6.0233 13.722 6.27799C13.9767 6.53268 13.9767 6.94562 13.722 7.20031L10.9223 10L13.722 12.7997C13.9767 13.0544 13.9767 13.4674 13.722 13.722C13.4673 13.9767 13.0544 13.9767 12.7997 13.722L9.99996 10.9223L7.20024 13.722C6.94555 13.9767 6.53262 13.9767 6.27793 13.722C6.02324 13.4674 6.02324 13.0544 6.27793 12.7997L9.07764 10L6.27793 7.20031C6.02324 6.94562 6.02324 6.53268 6.27793 6.27799Z" fill="#DD4D4D" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#FFD9D9" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27793 6.27799C6.53262 6.0233 6.94555 6.0233 7.20024 6.27799L9.99996 9.07771L12.7997 6.27799C13.0544 6.0233 13.4673 6.0233 13.722 6.27799C13.9767 6.53268 13.9767 6.94562 13.722 7.20031L10.9223 10L13.722 12.7997C13.9767 13.0544 13.9767 13.4674 13.722 13.722C13.4673 13.9767 13.0544 13.9767 12.7997 13.722L9.99996 10.9223L7.20024 13.722C6.94555 13.9767 6.53262 13.9767 6.27793 13.722C6.02324 13.4674 6.02324 13.0544 6.27793 12.7997L9.07764 10L6.27793 7.20031C6.02324 6.94562 6.02324 6.53268 6.27793 6.27799Z" fill="#DD4D4D" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#E6FFF5" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4419 6.43306C15.686 6.67714 15.686 7.07286 15.4419 7.31694L9.19194 13.5669C8.94786 13.811 8.55214 13.811 8.30806 13.5669L5.18306 10.4419C4.93898 10.1979 4.93898 9.80214 5.18306 9.55806C5.42714 9.31398 5.82286 9.31398 6.06694 9.55806L8.75 12.2411L14.5581 6.43306C14.8021 6.18898 15.1979 6.18898 15.4419 6.43306Z" fill="#0DCF83" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#FFD9D9" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27793 6.27799C6.53262 6.0233 6.94555 6.0233 7.20024 6.27799L9.99996 9.07771L12.7997 6.27799C13.0544 6.0233 13.4673 6.0233 13.722 6.27799C13.9767 6.53268 13.9767 6.94562 13.722 7.20031L10.9223 10L13.722 12.7997C13.9767 13.0544 13.9767 13.4674 13.722 13.722C13.4673 13.9767 13.0544 13.9767 12.7997 13.722L9.99996 10.9223L7.20024 13.722C6.94555 13.9767 6.53262 13.9767 6.27793 13.722C6.02324 13.4674 6.02324 13.0544 6.27793 12.7997L9.07764 10L6.27793 7.20031C6.02324 6.94562 6.02324 6.53268 6.27793 6.27799Z" fill="#DD4D4D" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#FFD9D9" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27793 6.27799C6.53262 6.0233 6.94555 6.0233 7.20024 6.27799L9.99996 9.07771L12.7997 6.27799C13.0544 6.0233 13.4673 6.0233 13.722 6.27799C13.9767 6.53268 13.9767 6.94562 13.722 7.20031L10.9223 10L13.722 12.7997C13.9767 13.0544 13.9767 13.4674 13.722 13.722C13.4673 13.9767 13.0544 13.9767 12.7997 13.722L9.99996 10.9223L7.20024 13.722C6.94555 13.9767 6.53262 13.9767 6.27793 13.722C6.02324 13.4674 6.02324 13.0544 6.27793 12.7997L9.07764 10L6.27793 7.20031C6.02324 6.94562 6.02324 6.53268 6.27793 6.27799Z" fill="#DD4D4D" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#FFD9D9" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27793 6.27799C6.53262 6.0233 6.94555 6.0233 7.20024 6.27799L9.99996 9.07771L12.7997 6.27799C13.0544 6.0233 13.4673 6.0233 13.722 6.27799C13.9767 6.53268 13.9767 6.94562 13.722 7.20031L10.9223 10L13.722 12.7997C13.9767 13.0544 13.9767 13.4674 13.722 13.722C13.4673 13.9767 13.0544 13.9767 12.7997 13.722L9.99996 10.9223L7.20024 13.722C6.94555 13.9767 6.53262 13.9767 6.27793 13.722C6.02324 13.4674 6.02324 13.0544 6.27793 12.7997L9.07764 10L6.27793 7.20031C6.02324 6.94562 6.02324 6.53268 6.27793 6.27799Z" fill="#DD4D4D" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#E6FFF5" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4419 6.43306C15.686 6.67714 15.686 7.07286 15.4419 7.31694L9.19194 13.5669C8.94786 13.811 8.55214 13.811 8.30806 13.5669L5.18306 10.4419C4.93898 10.1979 4.93898 9.80214 5.18306 9.55806C5.42714 9.31398 5.82286 9.31398 6.06694 9.55806L8.75 12.2411L14.5581 6.43306C14.8021 6.18898 15.1979 6.18898 15.4419 6.43306Z" fill="#0DCF83" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#E6FFF5" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4419 6.43306C15.686 6.67714 15.686 7.07286 15.4419 7.31694L9.19194 13.5669C8.94786 13.811 8.55214 13.811 8.30806 13.5669L5.18306 10.4419C4.93898 10.1979 4.93898 9.80214 5.18306 9.55806C5.42714 9.31398 5.82286 9.31398 6.06694 9.55806L8.75 12.2411L14.5581 6.43306C14.8021 6.18898 15.1979 6.18898 15.4419 6.43306Z" fill="#0DCF83" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#FFD9D9" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27793 6.27799C6.53262 6.0233 6.94555 6.0233 7.20024 6.27799L9.99996 9.07771L12.7997 6.27799C13.0544 6.0233 13.4673 6.0233 13.722 6.27799C13.9767 6.53268 13.9767 6.94562 13.722 7.20031L10.9223 10L13.722 12.7997C13.9767 13.0544 13.9767 13.4674 13.722 13.722C13.4673 13.9767 13.0544 13.9767 12.7997 13.722L9.99996 10.9223L7.20024 13.722C6.94555 13.9767 6.53262 13.9767 6.27793 13.722C6.02324 13.4674 6.02324 13.0544 6.27793 12.7997L9.07764 10L6.27793 7.20031C6.02324 6.94562 6.02324 6.53268 6.27793 6.27799Z" fill="#DD4D4D" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#FFD9D9" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27793 6.27799C6.53262 6.0233 6.94555 6.0233 7.20024 6.27799L9.99996 9.07771L12.7997 6.27799C13.0544 6.0233 13.4673 6.0233 13.722 6.27799C13.9767 6.53268 13.9767 6.94562 13.722 7.20031L10.9223 10L13.722 12.7997C13.9767 13.0544 13.9767 13.4674 13.722 13.722C13.4673 13.9767 13.0544 13.9767 12.7997 13.722L9.99996 10.9223L7.20024 13.722C6.94555 13.9767 6.53262 13.9767 6.27793 13.722C6.02324 13.4674 6.02324 13.0544 6.27793 12.7997L9.07764 10L6.27793 7.20031C6.02324 6.94562 6.02324 6.53268 6.27793 6.27799Z" fill="#DD4D4D" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#FFD9D9" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27793 6.27799C6.53262 6.0233 6.94555 6.0233 7.20024 6.27799L9.99996 9.07771L12.7997 6.27799C13.0544 6.0233 13.4673 6.0233 13.722 6.27799C13.9767 6.53268 13.9767 6.94562 13.722 7.20031L10.9223 10L13.722 12.7997C13.9767 13.0544 13.9767 13.4674 13.722 13.722C13.4673 13.9767 13.0544 13.9767 12.7997 13.722L9.99996 10.9223L7.20024 13.722C6.94555 13.9767 6.53262 13.9767 6.27793 13.722C6.02324 13.4674 6.02324 13.0544 6.27793 12.7997L9.07764 10L6.27793 7.20031C6.02324 6.94562 6.02324 6.53268 6.27793 6.27799Z" fill="#DD4D4D" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#E6FFF5" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4419 6.43306C15.686 6.67714 15.686 7.07286 15.4419 7.31694L9.19194 13.5669C8.94786 13.811 8.55214 13.811 8.30806 13.5669L5.18306 10.4419C4.93898 10.1979 4.93898 9.80214 5.18306 9.55806C5.42714 9.31398 5.82286 9.31398 6.06694 9.55806L8.75 12.2411L14.5581 6.43306C14.8021 6.18898 15.1979 6.18898 15.4419 6.43306Z" fill="#0DCF83" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#E6FFF5" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4419 6.43306C15.686 6.67714 15.686 7.07286 15.4419 7.31694L9.19194 13.5669C8.94786 13.811 8.55214 13.811 8.30806 13.5669L5.18306 10.4419C4.93898 10.1979 4.93898 9.80214 5.18306 9.55806C5.42714 9.31398 5.82286 9.31398 6.06694 9.55806L8.75 12.2411L14.5581 6.43306C14.8021 6.18898 15.1979 6.18898 15.4419 6.43306Z" fill="#0DCF83" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#FFD9D9" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27793 6.27799C6.53262 6.0233 6.94555 6.0233 7.20024 6.27799L9.99996 9.07771L12.7997 6.27799C13.0544 6.0233 13.4673 6.0233 13.722 6.27799C13.9767 6.53268 13.9767 6.94562 13.722 7.20031L10.9223 10L13.722 12.7997C13.9767 13.0544 13.9767 13.4674 13.722 13.722C13.4673 13.9767 13.0544 13.9767 12.7997 13.722L9.99996 10.9223L7.20024 13.722C6.94555 13.9767 6.53262 13.9767 6.27793 13.722C6.02324 13.4674 6.02324 13.0544 6.27793 12.7997L9.07764 10L6.27793 7.20031C6.02324 6.94562 6.02324 6.53268 6.27793 6.27799Z" fill="#DD4D4D" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#FFD9D9" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27793 6.27799C6.53262 6.0233 6.94555 6.0233 7.20024 6.27799L9.99996 9.07771L12.7997 6.27799C13.0544 6.0233 13.4673 6.0233 13.722 6.27799C13.9767 6.53268 13.9767 6.94562 13.722 7.20031L10.9223 10L13.722 12.7997C13.9767 13.0544 13.9767 13.4674 13.722 13.722C13.4673 13.9767 13.0544 13.9767 12.7997 13.722L9.99996 10.9223L7.20024 13.722C6.94555 13.9767 6.53262 13.9767 6.27793 13.722C6.02324 13.4674 6.02324 13.0544 6.27793 12.7997L9.07764 10L6.27793 7.20031C6.02324 6.94562 6.02324 6.53268 6.27793 6.27799Z" fill="#DD4D4D" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#FFD9D9" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27793 6.27799C6.53262 6.0233 6.94555 6.0233 7.20024 6.27799L9.99996 9.07771L12.7997 6.27799C13.0544 6.0233 13.4673 6.0233 13.722 6.27799C13.9767 6.53268 13.9767 6.94562 13.722 7.20031L10.9223 10L13.722 12.7997C13.9767 13.0544 13.9767 13.4674 13.722 13.722C13.4673 13.9767 13.0544 13.9767 12.7997 13.722L9.99996 10.9223L7.20024 13.722C6.94555 13.9767 6.53262 13.9767 6.27793 13.722C6.02324 13.4674 6.02324 13.0544 6.27793 12.7997L9.07764 10L6.27793 7.20031C6.02324 6.94562 6.02324 6.53268 6.27793 6.27799Z" fill="#DD4D4D" />
+                          </svg>
+                        </td>
+                      </tr>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-4 text-xs font-mont pr-4 pl-4 md:pl-[30px]">123456</td>
+                        <td class="font-semibold leading-4 py-4 text-xs font-mont px-4">Company A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Class A</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Default</td>
+                        <td class="leading-4 py-4 text-xs font-mont px-4">Success</td>
+                        <td class="leading-4 py-4 text-xs font-mont pl-4 pr-4 md:pr-[30px]">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10" cy="10" r="10" fill="#E6FFF5" />
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4419 6.43306C15.686 6.67714 15.686 7.07286 15.4419 7.31694L9.19194 13.5669C8.94786 13.811 8.55214 13.811 8.30806 13.5669L5.18306 10.4419C4.93898 10.1979 4.93898 9.80214 5.18306 9.55806C5.42714 9.31398 5.82286 9.31398 6.06694 9.55806L8.75 12.2411L14.5581 6.43306C14.8021 6.18898 15.1979 6.18898 15.4419 6.43306Z" fill="#0DCF83" />
+                          </svg>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="w-full p-[30px] border border-[#E5E5E5]">
+                  <h4 class="text-base font-bold text-[#010101]">Company A - 123456</h4>
+                  <p class="flex items-center gap-2 text-[13px] text-[#010101] font-semibold mt-11 mb-5">
+                    Values Impact
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.41675 3.08335H6.58341V4.25002H5.41675V3.08335ZM5.41675 5.41669H6.58341V8.91669H5.41675V5.41669ZM6.00008 0.166687C2.78008 0.166687 0.166748 2.78002 0.166748 6.00002C0.166748 9.22002 2.78008 11.8334 6.00008 11.8334C9.22008 11.8334 11.8334 9.22002 11.8334 6.00002C11.8334 2.78002 9.22008 0.166687 6.00008 0.166687ZM6.00008 10.6667C3.42758 10.6667 1.33341 8.57252 1.33341 6.00002C1.33341 3.42752 3.42758 1.33335 6.00008 1.33335C8.57258 1.33335 10.6667 3.42752 10.6667 6.00002C10.6667 8.57252 8.57258 10.6667 6.00008 10.6667Z" fill="#4286DD" />
+                    </svg>
+                  </p>
+
+                  <img src="assets/images/chart.svg" alt="Chart" class="w-full h-auto object-contain mb-10" />
+
+                  <p class="flex items-center gap-2 text-[13px] text-[#010101] font-semibold mt-11 mb-2.5">Values</p>
+
+                  <ul class="text-xs text-[#010101] space-y-1.5">
+                    <li class="flex items-center gap-3">
+                      <span class="block w-24 text-[#7f7f7f]">Loan date</span>
+                      <span class="block w-24">2018</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <span class="block w-24 text-[#7f7f7f]">Loan Amount</span>
+                      <span class="block w-24">$3M</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- ::::::::::::::::javascript:::::::::::::::: -->
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
