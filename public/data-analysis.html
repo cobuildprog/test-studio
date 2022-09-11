@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ::::::::::::::::stylesheet:::::::::::::::: -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- ::::::::::::::::google fonts:::::::::::::::: -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <title>Test Studio Analysis page</title>
+  </head>
+
+  <body>
+    <!-- ::::::::::::::::navbar:::::::::::::::: -->
+    <nav class="w-full bg-nav h-12 bg-cover mix-blend-overlay bg-[#4287DE] flex justify-between items-center gap-5 px-3.5">
+      <div class="flex items-center gap-4">
+        <img src="./assets/images/Logo.svg" alt="logo" class="w-auto h-auto object-contain" />
+        <a href="#" class="text-lg font-bold text-white">Test Studio</a>
+      </div>
+      <div class="flex items-center gap-3 lg:block">
+        <button class="flex items-center gap-1.5">
+          <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.99996 2.98979C8.61925 2.98979 7.49996 4.10907 7.49996 5.48979C7.49996 6.8705 8.61925 7.98979 9.99996 7.98979C11.3807 7.98979 12.5 6.8705 12.5 5.48979C12.5 4.10907 11.3807 2.98979 9.99996 2.98979ZM5.83329 5.48979C5.83329 3.1886 7.69877 1.32312 9.99996 1.32312C12.3011 1.32312 14.1666 3.1886 14.1666 5.48979C14.1666 7.79097 12.3011 9.65645 9.99996 9.65645C7.69877 9.65645 5.83329 7.79097 5.83329 5.48979ZM1.66663 18.8231C1.66663 14.2208 5.3976 10.4898 9.99996 10.4898C14.6023 10.4898 18.3333 14.2208 18.3333 18.8231C18.3333 19.2834 17.9602 19.6565 17.5 19.6565C17.0397 19.6565 16.6666 19.2834 16.6666 18.8231C16.6666 15.5366 14.2885 12.8055 11.1592 12.2569L12.4631 16.4947C12.5442 16.7583 12.4896 17.045 12.3174 17.2604L10.6507 19.3437C10.4925 19.5414 10.2531 19.6565 9.99996 19.6565C9.74681 19.6565 9.50738 19.5414 9.34924 19.3437L7.68257 17.2604C7.51027 17.045 7.4557 16.7583 7.53681 16.4947L8.84076 12.2569C5.71144 12.8055 3.33329 15.5366 3.33329 18.8231C3.33329 19.2834 2.9602 19.6565 2.49996 19.6565C2.03972 19.6565 1.66663 19.2834 1.66663 18.8231ZM9.99996 14.1568L9.25943 16.5635L9.99996 17.4891L10.7405 16.5635L9.99996 14.1568Z" fill="white" />
+          </svg>
+          <svg width="6" height="3" viewBox="0 0 6 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.931005 0.254003C1.06118 0.123828 1.27223 0.123828 1.40241 0.254003L3.16671 2.0183L4.93101 0.254003C5.06118 0.123828 5.27223 0.123828 5.40241 0.254003C5.53258 0.384178 5.53258 0.595233 5.40241 0.725408L3.40241 2.72541C3.27223 2.85558 3.06118 2.85558 2.93101 2.72541L0.931005 0.725408C0.80083 0.595233 0.80083 0.384178 0.931005 0.254003Z" fill="white" />
+          </svg>
+        </button>
+        <button class="btn-toggle group text-white lg:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-6 h-6 fill-current group-open:hidden block">
+            <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-6 h-6 fill-current group-open:block hidden">
+            <path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="h-[calc(100vh-48px)] overflow-auto bg-[#f6f6f6]">
+      <!-- ::::::::::::::::page body:::::::::::::::: -->
+      <main class="w-full grid grid-cols-1 grid-rows-[min-content_1fr] lg:grid-rows-none lg:grid-cols-[minmax(180px,220px),minmax(470px,1fr)] lg:gap-[30px]">
+        <!-- [SIDEBAR] -->
+        <aside class="sidebar bg-white w-full lg:h-full transition-all duration-300 origin-top max-h-0 overflow-auto invisible pointer-events-none open:pointer-events-auto open:visible lg:visible lg:pointer-events-auto open:max-h-screen lg:max-h-full">
+          <ul>
+            <li class="relative">
+              <a href="#" class="dropdown-link text-sm leading-[45px] text-blue-dark flex justify-between items-center gap-4 px-5 border-b borders">
+                <span>Fund Name </span>
+                <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#a)">
+                    <path d="m7 10 5 5 5-5H7Z" fill="#4286DD" />
+                  </g>
+                  <defs>
+                    <clipPath id="a">
+                      <path fill="#fff" d="M0 0h24v24H0z" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+              <ul class="dropdown">
+                <li>
+                  <a href="#" class="text-sm leading-9 text-blue-dark capitalize">someThing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-9 text-blue-dark capitalize">someThing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-9 text-blue-dark capitalize">someThing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-9 text-blue-dark capitalize">someThing</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm leading-9 text-blue-dark capitalize">someThing</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="px-3 mt-4">
+            <li class="mb-1.5">
+              <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:text-white hover:bg-blue-600 w-full inline-block px-4">Models</a>
+            </li>
+            <li class="mb-1.5">
+              <a href="#" class="dropdown-link text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:text-white hover:bg-blue-600 w-full inline-block px-4 main-menu-active">Model X</a>
+              <ul class="mt-1.5 dropdown pl-0">
+                <li class="mb-1.5">
+                  <a href="#" class="dropdown-link text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#d3e6f8] w-full inline-block pl-4 sub-menu-active">Anchor</a>
+                  <ul class="pl-5 mt-1.5 dropdown pr-0">
+                    <li class="mb-1.5">
+                      <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#f7f1f1] w-full inline-block px-4">Upload File</a>
+                    </li>
+                    <li class="mb-1.5">
+                      <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#f7f1f1] w-full inline-block px-4 tertiory-menu-active">Data Analysis</a>
+                    </li>
+                    <li class="mb-1.5">
+                      <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#f7f1f1] w-full inline-block px-4">Features Analysis</a>
+                    </li>
+                    <li class="mb-1.5">
+                      <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#f7f1f1] w-full inline-block px-4">Results Analysis</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="mb-1.5">
+                  <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#d3e6f8] w-full inline-block px-4">Modifier</a>
+                </li>
+                <li class="mb-1.5">
+                  <a href="#" class="text-sm font-medium leading-[45px] rounded-[6px] text-blue-dark hover:bg-[#d3e6f8] w-full inline-block px-4"> Model Configuration</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- ::::::::::::::::right side of the page:::::::::::::::: -->
+        <div class="w-full pt-5 lg:pt-[30px] px-5 lg:pl-0 pr-4 :md:pr-[30px] overflow-hidden">
+          <ul class="flex items-center gap-1.5 mb-3">
+            <li>
+              <a href="#" class="text-xs text-blue-dark font-normal">Anchors</a>
+            </li>
+            <li class="text-[#9C9C9C]">/</li>
+            <li>
+              <a href="#" class="text-xs text-[#9C9C9C] font-normal">Results Analysis</a>
+            </li>
+          </ul>
+
+          <!-- ::::::::::::::::Activation modal result:::::::::::::::: -->
+          <div class="p-4 md:p-8 bg-white w-full border border-[#e5e5e5] mb-[30px]">
+            <button class="text-lg sm:text-[22px] leading-none font-bold capitalize mb-[46px] tracking-[0.25px] flex justify-between w-full">
+              <span>Aviation Model Results</span>
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1 7.9L12.5 6.5L6.5 0.5L0.5 6.5L1.9 7.9L6.5 3.3L11.1 7.9Z" fill="#010101" />
+              </svg>
+            </button>
+            <!-- ::::::::::::::::box of the results:::::::::::::::: -->
+            <div class="w-full grid sm:grid-cols-2 xl:grid-cols-4 gap-0 xl:gap-2">
+              <div class="text-center sm:border-r border-b xl:border-b-0 pb-6 xl:pb-0 border-[#e5e5e5]">
+                <h5 class="text-base leading-5 font-semibold">Total Model Score</h5>
+                <p class="font-semibold text-[40px] leading-[49px] text-[#0DCF83] mt-[15px] text-center">91%</p>
+                <p class="text-xs leading-[15px] text-[#9C9C9C] font-normal max-w-[280px] w-full mx-auto mt-[18px]">A score combining the model’s default rate and the missed loans rate.</p>
+              </div>
+              <div class="text-center pt-5 sm:pt-0 border-b pb-6 xl:border-b-0 xl:pb-0 xl:border-r border-[#e5e5e5]">
+                <h5 class="text-base leading-5 font-semibold">Default Rate</h5>
+                <p class="font-semibold text-[40px] leading-[49px] text-[#0DCF83] mt-[15px] text-center">4.1%</p>
+                <p class="text-xs leading-[15px] text-[#9C9C9C] font-normal max-w-[280px] w-full mx-auto mt-[18px]">95.9% of the loans that were recommended by the model, turned out to be successful</p>
+              </div>
+              <div class="text-center sm:border-r border-b pb-6 sm:border-b-0 border-[#e5e5e5] pt-5 xl:pt-0">
+                <h5 class="text-base leading-5 font-semibold">Missed Loans Rate</h5>
+                <p class="font-semibold text-[40px] leading-[49px] text-[#ED5554] mt-[15px] text-center">3.3%</p>
+                <p class="text-xs leading-[15px] text-[#9C9C9C] font-normal max-w-[280px] w-full mx-auto mt-[18px]">The model recommended to provide a loan for 96.7% of all the successful loans.</p>
+              </div>
+              <div class="text-center pt-5 xl:pt-0">
+                <h5 class="text-base leading-5 font-semibold">Avoided defaults</h5>
+                <p class="font-semibold text-[40px] leading-[49px] text-[#0DCF83] mt-[15px] text-center">26/30</p>
+                <p class="text-xs leading-[15px] text-[#9C9C9C] font-normal max-w-[280px] w-full mx-auto mt-[18px]">Default rate was reduced by 25.9% points from 30% to 4.1%.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ::::::::::::::::Results Analysis:::::::::::::::: -->
+          <div class="bg-white w-full border border-[#e5e5e5]">
+            <h2 class="text-lg sm:text-[22px] leading-none font-bold capitalize tracking-[0.25px] flex justify-between w-full p-4 md:p-8 border-b border-[#e5e5e5]">Data Analysis</h2>
+            <div class="p-4 md:p-8">
+              <h2 class="font-semibold text-base leading-5">Data Quality</h2>
+              <p class="font-normal text-[13px] leading-5 text-[#4f4f4f] max-w-[626px] w-full mt-4 mb-[26px]">The quality of the dataset directly influences the accuracy and performance of the model. Learn how your dataset was scored in key parameters:</p>
+
+              <div class="space-y-5">
+                <!-- -----[SIMPLE SIZE TABS OR COLLAPSEABLE]----- -->
+                <div class="group border border-[#E5E5E5] tab-container">
+                  <button class="shadow-level-2 px-4 lg:px-8 py-4 lg:py-7 grid grid-cols-[1fr_max-content] md:items-center text-left gap-3 w-full hover:bg-[#fafafa] transition-all group-open:bg-[#fafafa] border-b border-transparent group-open:border-[#E5E5E5] tab-btn">
+                    <div class="grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-5 lg:gap-10">
+                      <div class="text-[#0DCF83] rounded-full border border-[#e5e5e5e] bg-[#D8FFE5] hidden sm:flex items-center md:w-10 w-8 h-8 md:h-10 justify-center">
+                        <svg class="md:h-4 h-2.5 w-4 md:w-6" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M20.8839 0.866117C21.372 1.35427 21.372 2.14573 20.8839 2.63388L8.38388 15.1339C7.89573 15.622 7.10427 15.622 6.61612 15.1339L0.366117 8.88388C-0.122039 8.39573 -0.122039 7.60427 0.366117 7.11612C0.854272 6.62796 1.64573 6.62796 2.13388 7.11612L7.5 12.4822L19.1161 0.866117C19.6043 0.377961 20.3957 0.377961 20.8839 0.866117Z" fill="#0DCF83" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h2 class="font-semibold text-base leading-5">Sample Size</h2>
+                        <p class="font-normal text-[13px] leading-5 text-[#4f4f4f] mt-2.5 grid grid-cols-[max-content_1fr] gap-2">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.8182 7.27273H16V8.72727H13.8182V7.27273ZM0 7.27273H2.18182V8.72727H0V7.27273ZM8.72727 0V2.18182H7.27273V0H8.72727ZM2.85091 1.81818L4.4 3.37455L3.36727 4.4L1.81818 2.85818L2.85091 1.81818ZM11.6 3.36727L13.1418 1.81818L14.1818 2.85818L12.6327 4.4L11.6 3.36727ZM8 3.63636C9.15731 3.63636 10.2672 4.0961 11.0856 4.91444C11.9039 5.73278 12.3636 6.84269 12.3636 8C12.3636 9.61455 11.4836 11.0255 10.1818 11.7818V13.0909C10.1818 13.2838 10.1052 13.4688 9.96881 13.6052C9.83241 13.7416 9.64743 13.8182 9.45455 13.8182H6.54545C6.35257 13.8182 6.16759 13.7416 6.0312 13.6052C5.89481 13.4688 5.81818 13.2838 5.81818 13.0909V11.7818C4.51636 11.0255 3.63636 9.61455 3.63636 8C3.63636 6.84269 4.0961 5.73278 4.91444 4.91444C5.73278 4.0961 6.84269 3.63636 8 3.63636ZM9.45455 14.5455V15.2727C9.45455 15.4656 9.37792 15.6506 9.24153 15.787C9.10514 15.9234 8.92016 16 8.72727 16H7.27273C7.07984 16 6.89486 15.9234 6.75847 15.787C6.62208 15.6506 6.54545 15.4656 6.54545 15.2727V14.5455H9.45455ZM7.27273 12.3636H8.72727V10.8145C9.98545 10.4945 10.9091 9.35273 10.9091 8C10.9091 7.22846 10.6026 6.48852 10.057 5.94296C9.51148 5.3974 8.77154 5.09091 8 5.09091C7.22846 5.09091 6.48852 5.3974 5.94296 5.94296C5.3974 6.48852 5.09091 7.22846 5.09091 8C5.09091 9.35273 6.01455 10.4945 7.27273 10.8145V12.3636Z" fill="#4286DD" />
+                          </svg>
+                          The dataset contains 10,000 valid records, 7,000 were used for training the model, and 3,000 for testing it.
+                        </p>
+                      </div>
+                    </div>
+                    <svg width="20" height="20" class="block transition-all group-open:rotate-180 transform" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.82739 6.91076C5.15283 6.58533 5.68047 6.58533 6.0059 6.91076L10.4166 11.3215L14.8274 6.91076C15.1528 6.58533 15.6805 6.58533 16.0059 6.91076C16.3313 7.2362 16.3313 7.76384 16.0059 8.08928L11.0059 13.0893C10.6805 13.4147 10.1528 13.4147 9.82739 13.0893L4.82739 8.08928C4.50195 7.76384 4.50195 7.2362 4.82739 6.91076Z" fill="#010101" />
+                    </svg>
+                  </button>
+
+                  <div class="h-0 overflow-hidden transition-all duration-200 tab-content">
+                    <div class="p-4 xl:p-8 grid grid-cols-1 xl:grid-cols-[minmax(320px,420px)_1fr] gap-6 xl:gap-0">
+                      <div class="mx-auto xl:mx-0 max-w-[400px] w-full">
+                        <h2 class="font-semibold text-sm leading-5 tracking-[0.1px] mb-5 pb-0.5">Distribution</h2>
+                        <ul class="flex items-center justify-end gap-6 xl:gap-9">
+                          <li class="text-[10px] leading-5 text-[#4f4f4f] flex items-center gap-2.5">
+                            <span class="block w-2 h-2 bg-[#5397EF]"></span>
+                            Default
+                          </li>
+                          <li class="text-[10px] leading-5 text-[#4f4f4f] flex items-center gap-2.5">
+                            <span class="block w-2 h-2 bg-[#98C5FF]"></span>
+                            Non-Default
+                          </li>
+                        </ul>
+
+                        <img src="assets/images/chart-distribution.svg" alt="" class="block max-w-[217px] w-full mx-auto mt-8 md:mt-11 mb-10 md:mb-16" />
+
+                        <div class="flex gap-2">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.33331 3.66666H7.66665V5H6.33331V3.66666ZM6.33331 6.33333H7.66665V10.3333H6.33331V6.33333ZM6.99998 0.333328C3.31998 0.333328 0.333313 3.32 0.333313 7C0.333313 10.68 3.31998 13.6667 6.99998 13.6667C10.68 13.6667 13.6666 10.68 13.6666 7C13.6666 3.32 10.68 0.333328 6.99998 0.333328ZM6.99998 12.3333C4.05998 12.3333 1.66665 9.94 1.66665 7C1.66665 4.06 4.05998 1.66666 6.99998 1.66666C9.93998 1.66666 12.3333 4.06 12.3333 7C12.3333 9.94 9.93998 12.3333 6.99998 12.3333Z" fill="#4286DD" />
+                          </svg>
+
+                          <div class="text-xs leading-5 text-[#7f7f7f]">
+                            <p>Required defaulted loans rates:</p>
+
+                            <ul class="flex items-center gap-2 flex-wrap">
+                              <li>Min: 0.5%</li>
+                              <li>|</li>
+                              <li>Low: 0.5%-5%</li>
+                              <li>|</li>
+                              <li>Med: 5%-15%</li>
+                              <li>|</li>
+                              <li>Optimal: 15%</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="xl:border-l border-t border-t-[#e5e5e5] xl:border-t-0 xl:border-l-[#e5e5e5] md:pl-5 xl:pl-10 pt-6 xl:pt-0">
+                        <h2 class="font-semibold text-sm leading-5 tracking-[0.1px] mb-7 xl:mb-12 pb-0.5">Distribution of target per categories in the dataset</h2>
+
+                        <div class="w-full overflow-auto whitespace-nowrap space-x-5 pb-6">
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="group border border-[#E5E5E5] tab-container">
+                  <button class="shadow-level-2 px-4 lg:px-8 py-4 lg:py-7 grid grid-cols-[1fr_max-content] md:items-center text-left gap-3 w-full hover:bg-[#fafafa] transition-all group-open:bg-[#fafafa] border-b border-transparent group-open:border-[#E5E5E5] tab-btn">
+                    <div class="grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-5 lg:gap-10">
+                      <div class="hidden text-[#FFA51E] rounded-full border border-[#e5e5e5e] bg-[#FFE9C8] sm:flex items-center md:w-10 w-8 h-8 md:h-10 justify-center">
+                        <svg class="h-1 w-3 md:w-5" viewBox="0 0 18 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <line x1="2" y1="2" x2="16" y2="2" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h2 class="font-semibold text-base leading-5">Data Completeness</h2>
+                        <p class="font-normal text-[13px] leading-5 text-[#4f4f4f] mt-2.5 grid grid-cols-[max-content_1fr] gap-2">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.8182 7.27273H16V8.72727H13.8182V7.27273ZM0 7.27273H2.18182V8.72727H0V7.27273ZM8.72727 0V2.18182H7.27273V0H8.72727ZM2.85091 1.81818L4.4 3.37455L3.36727 4.4L1.81818 2.85818L2.85091 1.81818ZM11.6 3.36727L13.1418 1.81818L14.1818 2.85818L12.6327 4.4L11.6 3.36727ZM8 3.63636C9.15731 3.63636 10.2672 4.0961 11.0856 4.91444C11.9039 5.73278 12.3636 6.84269 12.3636 8C12.3636 9.61455 11.4836 11.0255 10.1818 11.7818V13.0909C10.1818 13.2838 10.1052 13.4688 9.96881 13.6052C9.83241 13.7416 9.64743 13.8182 9.45455 13.8182H6.54545C6.35257 13.8182 6.16759 13.7416 6.0312 13.6052C5.89481 13.4688 5.81818 13.2838 5.81818 13.0909V11.7818C4.51636 11.0255 3.63636 9.61455 3.63636 8C3.63636 6.84269 4.0961 5.73278 4.91444 4.91444C5.73278 4.0961 6.84269 3.63636 8 3.63636ZM9.45455 14.5455V15.2727C9.45455 15.4656 9.37792 15.6506 9.24153 15.787C9.10514 15.9234 8.92016 16 8.72727 16H7.27273C7.07984 16 6.89486 15.9234 6.75847 15.787C6.62208 15.6506 6.54545 15.4656 6.54545 15.2727V14.5455H9.45455ZM7.27273 12.3636H8.72727V10.8145C9.98545 10.4945 10.9091 9.35273 10.9091 8C10.9091 7.22846 10.6026 6.48852 10.057 5.94296C9.51148 5.3974 8.77154 5.09091 8 5.09091C7.22846 5.09091 6.48852 5.3974 5.94296 5.94296C5.3974 6.48852 5.09091 7.22846 5.09091 8C5.09091 9.35273 6.01455 10.4945 7.27273 10.8145V12.3636Z" fill="#4286DD" />
+                          </svg>
+                          The dataset contains 10,000 valid records, 7,000 were used for training the model, and 3,000 for testing it.
+                        </p>
+                      </div>
+                    </div>
+                    <svg width="20" height="20" class="block transition-all group-open:rotate-180 transform" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.82739 6.91076C5.15283 6.58533 5.68047 6.58533 6.0059 6.91076L10.4166 11.3215L14.8274 6.91076C15.1528 6.58533 15.6805 6.58533 16.0059 6.91076C16.3313 7.2362 16.3313 7.76384 16.0059 8.08928L11.0059 13.0893C10.6805 13.4147 10.1528 13.4147 9.82739 13.0893L4.82739 8.08928C4.50195 7.76384 4.50195 7.2362 4.82739 6.91076Z" fill="#010101" />
+                    </svg>
+                  </button>
+
+                  <div class="h-0 overflow-hidden transition-all duration-200 tab-content">
+                    <div class="p-4 xl:p-8 grid grid-cols-1 xl:grid-cols-[minmax(320px,420px)_1fr] gap-6 xl:gap-0">
+                      <div class="mx-auto xl:mx-0 max-w-[400px] w-full">
+                        <h2 class="font-semibold text-sm leading-5 tracking-[0.1px] mb-5 pb-0.5">Distribution</h2>
+                        <ul class="flex items-center justify-end gap-6 xl:gap-9">
+                          <li class="text-[10px] leading-5 text-[#4f4f4f] flex items-center gap-2.5">
+                            <span class="block w-2 h-2 bg-[#5397EF]"></span>
+                            Default
+                          </li>
+                          <li class="text-[10px] leading-5 text-[#4f4f4f] flex items-center gap-2.5">
+                            <span class="block w-2 h-2 bg-[#98C5FF]"></span>
+                            Non-Default
+                          </li>
+                        </ul>
+
+                        <img src="assets/images/chart-distribution.svg" alt="" class="block max-w-[217px] w-full mx-auto mt-8 md:mt-11 mb-10 md:mb-16" />
+
+                        <div class="flex gap-2">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.33331 3.66666H7.66665V5H6.33331V3.66666ZM6.33331 6.33333H7.66665V10.3333H6.33331V6.33333ZM6.99998 0.333328C3.31998 0.333328 0.333313 3.32 0.333313 7C0.333313 10.68 3.31998 13.6667 6.99998 13.6667C10.68 13.6667 13.6666 10.68 13.6666 7C13.6666 3.32 10.68 0.333328 6.99998 0.333328ZM6.99998 12.3333C4.05998 12.3333 1.66665 9.94 1.66665 7C1.66665 4.06 4.05998 1.66666 6.99998 1.66666C9.93998 1.66666 12.3333 4.06 12.3333 7C12.3333 9.94 9.93998 12.3333 6.99998 12.3333Z" fill="#4286DD" />
+                          </svg>
+
+                          <div class="text-xs leading-5 text-[#7f7f7f]">
+                            <p>Required defaulted loans rates:</p>
+
+                            <ul class="flex items-center gap-2 flex-wrap">
+                              <li>Min: 0.5%</li>
+                              <li>|</li>
+                              <li>Low: 0.5%-5%</li>
+                              <li>|</li>
+                              <li>Med: 5%-15%</li>
+                              <li>|</li>
+                              <li>Optimal: 15%</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="xl:border-l border-t border-t-[#e5e5e5] xl:border-t-0 xl:border-l-[#e5e5e5] md:pl-5 xl:pl-10 pt-6 xl:pt-0">
+                        <h2 class="font-semibold text-sm leading-5 tracking-[0.1px] mb-7 xl:mb-12 pb-0.5">Distribution of target per categories in the dataset</h2>
+
+                        <div class="w-full overflow-auto whitespace-nowrap space-x-5 pb-6">
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="group border border-[#E5E5E5] tab-container">
+                  <button class="shadow-level-2 px-4 lg:px-8 py-4 lg:py-7 grid grid-cols-[1fr_max-content] md:items-center text-left gap-3 w-full hover:bg-[#fafafa] transition-all group-open:bg-[#fafafa] border-b border-transparent group-open:border-[#E5E5E5] tab-btn">
+                    <div class="grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-5 lg:gap-10">
+                      <div class="text-[#0DCF83] rounded-full border border-[#e5e5e5e] bg-[#D8FFE5] hidden sm:flex items-center md:w-10 w-8 h-8 md:h-10 justify-center">
+                        <svg class="md:h-4 h-2.5 w-4 md:w-6" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M20.8839 0.866117C21.372 1.35427 21.372 2.14573 20.8839 2.63388L8.38388 15.1339C7.89573 15.622 7.10427 15.622 6.61612 15.1339L0.366117 8.88388C-0.122039 8.39573 -0.122039 7.60427 0.366117 7.11612C0.854272 6.62796 1.64573 6.62796 2.13388 7.11612L7.5 12.4822L19.1161 0.866117C19.6043 0.377961 20.3957 0.377961 20.8839 0.866117Z" fill="#0DCF83" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h2 class="font-semibold text-base leading-5">Data Richness</h2>
+                        <p class="font-normal text-[13px] leading-5 text-[#4f4f4f] mt-2.5 grid grid-cols-[max-content_1fr] gap-2">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.8182 7.27273H16V8.72727H13.8182V7.27273ZM0 7.27273H2.18182V8.72727H0V7.27273ZM8.72727 0V2.18182H7.27273V0H8.72727ZM2.85091 1.81818L4.4 3.37455L3.36727 4.4L1.81818 2.85818L2.85091 1.81818ZM11.6 3.36727L13.1418 1.81818L14.1818 2.85818L12.6327 4.4L11.6 3.36727ZM8 3.63636C9.15731 3.63636 10.2672 4.0961 11.0856 4.91444C11.9039 5.73278 12.3636 6.84269 12.3636 8C12.3636 9.61455 11.4836 11.0255 10.1818 11.7818V13.0909C10.1818 13.2838 10.1052 13.4688 9.96881 13.6052C9.83241 13.7416 9.64743 13.8182 9.45455 13.8182H6.54545C6.35257 13.8182 6.16759 13.7416 6.0312 13.6052C5.89481 13.4688 5.81818 13.2838 5.81818 13.0909V11.7818C4.51636 11.0255 3.63636 9.61455 3.63636 8C3.63636 6.84269 4.0961 5.73278 4.91444 4.91444C5.73278 4.0961 6.84269 3.63636 8 3.63636ZM9.45455 14.5455V15.2727C9.45455 15.4656 9.37792 15.6506 9.24153 15.787C9.10514 15.9234 8.92016 16 8.72727 16H7.27273C7.07984 16 6.89486 15.9234 6.75847 15.787C6.62208 15.6506 6.54545 15.4656 6.54545 15.2727V14.5455H9.45455ZM7.27273 12.3636H8.72727V10.8145C9.98545 10.4945 10.9091 9.35273 10.9091 8C10.9091 7.22846 10.6026 6.48852 10.057 5.94296C9.51148 5.3974 8.77154 5.09091 8 5.09091C7.22846 5.09091 6.48852 5.3974 5.94296 5.94296C5.3974 6.48852 5.09091 7.22846 5.09091 8C5.09091 9.35273 6.01455 10.4945 7.27273 10.8145V12.3636Z" fill="#4286DD" />
+                          </svg>
+                          The dataset contains 10,000 valid records, 7,000 were used for training the model, and 3,000 for testing it.
+                        </p>
+                      </div>
+                    </div>
+                    <svg width="20" height="20" class="block transition-all group-open:rotate-180 transform" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.82739 6.91076C5.15283 6.58533 5.68047 6.58533 6.0059 6.91076L10.4166 11.3215L14.8274 6.91076C15.1528 6.58533 15.6805 6.58533 16.0059 6.91076C16.3313 7.2362 16.3313 7.76384 16.0059 8.08928L11.0059 13.0893C10.6805 13.4147 10.1528 13.4147 9.82739 13.0893L4.82739 8.08928C4.50195 7.76384 4.50195 7.2362 4.82739 6.91076Z" fill="#010101" />
+                    </svg>
+                  </button>
+
+                  <div class="h-0 overflow-hidden transition-all duration-200 tab-content">
+                    <div class="p-4 xl:p-8 grid grid-cols-1 xl:grid-cols-[minmax(320px,420px)_1fr] gap-6 xl:gap-0">
+                      <div class="mx-auto xl:mx-0 max-w-[400px] w-full">
+                        <h2 class="font-semibold text-sm leading-5 tracking-[0.1px] mb-5 pb-0.5">Distribution</h2>
+                        <ul class="flex items-center justify-end gap-6 xl:gap-9">
+                          <li class="text-[10px] leading-5 text-[#4f4f4f] flex items-center gap-2.5">
+                            <span class="block w-2 h-2 bg-[#5397EF]"></span>
+                            Default
+                          </li>
+                          <li class="text-[10px] leading-5 text-[#4f4f4f] flex items-center gap-2.5">
+                            <span class="block w-2 h-2 bg-[#98C5FF]"></span>
+                            Non-Default
+                          </li>
+                        </ul>
+
+                        <img src="assets/images/chart-distribution.svg" alt="" class="block max-w-[217px] w-full mx-auto mt-8 md:mt-11 mb-10 md:mb-16" />
+
+                        <div class="flex gap-2">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.33331 3.66666H7.66665V5H6.33331V3.66666ZM6.33331 6.33333H7.66665V10.3333H6.33331V6.33333ZM6.99998 0.333328C3.31998 0.333328 0.333313 3.32 0.333313 7C0.333313 10.68 3.31998 13.6667 6.99998 13.6667C10.68 13.6667 13.6666 10.68 13.6666 7C13.6666 3.32 10.68 0.333328 6.99998 0.333328ZM6.99998 12.3333C4.05998 12.3333 1.66665 9.94 1.66665 7C1.66665 4.06 4.05998 1.66666 6.99998 1.66666C9.93998 1.66666 12.3333 4.06 12.3333 7C12.3333 9.94 9.93998 12.3333 6.99998 12.3333Z" fill="#4286DD" />
+                          </svg>
+
+                          <div class="text-xs leading-5 text-[#7f7f7f]">
+                            <p>Required defaulted loans rates:</p>
+
+                            <ul class="flex items-center gap-2 flex-wrap">
+                              <li>Min: 0.5%</li>
+                              <li>|</li>
+                              <li>Low: 0.5%-5%</li>
+                              <li>|</li>
+                              <li>Med: 5%-15%</li>
+                              <li>|</li>
+                              <li>Optimal: 15%</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="xl:border-l border-t border-t-[#e5e5e5] xl:border-t-0 xl:border-l-[#e5e5e5] md:pl-5 xl:pl-10 pt-6 xl:pt-0">
+                        <h2 class="font-semibold text-sm leading-5 tracking-[0.1px] mb-7 xl:mb-12 pb-0.5">Distribution of target per categories in the dataset</h2>
+
+                        <div class="w-full overflow-auto whitespace-nowrap space-x-5 pb-6">
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="group border border-[#E5E5E5] tab-container">
+                  <button class="shadow-level-2 px-4 lg:px-8 py-4 lg:py-7 grid grid-cols-[1fr_max-content] md:items-center text-left gap-3 w-full hover:bg-[#fafafa] transition-all group-open:bg-[#fafafa] border-b border-transparent group-open:border-[#E5E5E5] tab-btn">
+                    <div class="grid grid-cols-1 sm:grid-cols-[max-content_1fr] gap-5 lg:gap-10">
+                      <div class="text-[#DD4D4D] rounded-full border border-[#e5e5e5e] bg-[#FFD9D9] hidden sm:flex items-center md:w-10 w-8 h-8 md:h-10 justify-center">
+                        <svg class="md:w-1.5 w-1 h-4 md:h-5" viewBox="0 0 5 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1.16 11.432H3.536L4.136 0.199999H0.584L1.16 11.432ZM2.36 17.168C3.464 17.168 4.256 16.328 4.256 15.296C4.256 14.264 3.464 13.448 2.36 13.448C1.232 13.448 0.416 14.264 0.416 15.296C0.416 16.328 1.232 17.168 2.36 17.168Z" fill="currentColor" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h2 class="font-semibold text-base leading-5">Correlation</h2>
+                        <p class="font-normal text-[13px] leading-5 text-[#4f4f4f] mt-2.5 grid grid-cols-[max-content_1fr] gap-2">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.8182 7.27273H16V8.72727H13.8182V7.27273ZM0 7.27273H2.18182V8.72727H0V7.27273ZM8.72727 0V2.18182H7.27273V0H8.72727ZM2.85091 1.81818L4.4 3.37455L3.36727 4.4L1.81818 2.85818L2.85091 1.81818ZM11.6 3.36727L13.1418 1.81818L14.1818 2.85818L12.6327 4.4L11.6 3.36727ZM8 3.63636C9.15731 3.63636 10.2672 4.0961 11.0856 4.91444C11.9039 5.73278 12.3636 6.84269 12.3636 8C12.3636 9.61455 11.4836 11.0255 10.1818 11.7818V13.0909C10.1818 13.2838 10.1052 13.4688 9.96881 13.6052C9.83241 13.7416 9.64743 13.8182 9.45455 13.8182H6.54545C6.35257 13.8182 6.16759 13.7416 6.0312 13.6052C5.89481 13.4688 5.81818 13.2838 5.81818 13.0909V11.7818C4.51636 11.0255 3.63636 9.61455 3.63636 8C3.63636 6.84269 4.0961 5.73278 4.91444 4.91444C5.73278 4.0961 6.84269 3.63636 8 3.63636ZM9.45455 14.5455V15.2727C9.45455 15.4656 9.37792 15.6506 9.24153 15.787C9.10514 15.9234 8.92016 16 8.72727 16H7.27273C7.07984 16 6.89486 15.9234 6.75847 15.787C6.62208 15.6506 6.54545 15.4656 6.54545 15.2727V14.5455H9.45455ZM7.27273 12.3636H8.72727V10.8145C9.98545 10.4945 10.9091 9.35273 10.9091 8C10.9091 7.22846 10.6026 6.48852 10.057 5.94296C9.51148 5.3974 8.77154 5.09091 8 5.09091C7.22846 5.09091 6.48852 5.3974 5.94296 5.94296C5.3974 6.48852 5.09091 7.22846 5.09091 8C5.09091 9.35273 6.01455 10.4945 7.27273 10.8145V12.3636Z" fill="#4286DD" />
+                          </svg>
+                          The dataset contains 10,000 valid records, 7,000 were used for training the model, and 3,000 for testing it.
+                        </p>
+                      </div>
+                    </div>
+                    <svg width="20" height="20" class="block transition-all group-open:rotate-180 transform" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.82739 6.91076C5.15283 6.58533 5.68047 6.58533 6.0059 6.91076L10.4166 11.3215L14.8274 6.91076C15.1528 6.58533 15.6805 6.58533 16.0059 6.91076C16.3313 7.2362 16.3313 7.76384 16.0059 8.08928L11.0059 13.0893C10.6805 13.4147 10.1528 13.4147 9.82739 13.0893L4.82739 8.08928C4.50195 7.76384 4.50195 7.2362 4.82739 6.91076Z" fill="#010101" />
+                    </svg>
+                  </button>
+
+                  <div class="h-0 overflow-hidden transition-all duration-200 tab-content">
+                    <div class="p-4 xl:p-8 grid grid-cols-1 xl:grid-cols-[minmax(320px,420px)_1fr] gap-6 xl:gap-0">
+                      <div class="mx-auto xl:mx-0 max-w-[400px] w-full">
+                        <h2 class="font-semibold text-sm leading-5 tracking-[0.1px] mb-5 pb-0.5">Distribution</h2>
+                        <ul class="flex items-center justify-end gap-6 xl:gap-9">
+                          <li class="text-[10px] leading-5 text-[#4f4f4f] flex items-center gap-2.5">
+                            <span class="block w-2 h-2 bg-[#5397EF]"></span>
+                            Default
+                          </li>
+                          <li class="text-[10px] leading-5 text-[#4f4f4f] flex items-center gap-2.5">
+                            <span class="block w-2 h-2 bg-[#98C5FF]"></span>
+                            Non-Default
+                          </li>
+                        </ul>
+
+                        <img src="assets/images/chart-distribution.svg" alt="" class="block max-w-[217px] w-full mx-auto mt-8 md:mt-11 mb-10 md:mb-16" />
+
+                        <div class="flex gap-2">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.33331 3.66666H7.66665V5H6.33331V3.66666ZM6.33331 6.33333H7.66665V10.3333H6.33331V6.33333ZM6.99998 0.333328C3.31998 0.333328 0.333313 3.32 0.333313 7C0.333313 10.68 3.31998 13.6667 6.99998 13.6667C10.68 13.6667 13.6666 10.68 13.6666 7C13.6666 3.32 10.68 0.333328 6.99998 0.333328ZM6.99998 12.3333C4.05998 12.3333 1.66665 9.94 1.66665 7C1.66665 4.06 4.05998 1.66666 6.99998 1.66666C9.93998 1.66666 12.3333 4.06 12.3333 7C12.3333 9.94 9.93998 12.3333 6.99998 12.3333Z" fill="#4286DD" />
+                          </svg>
+
+                          <div class="text-xs leading-5 text-[#7f7f7f]">
+                            <p>Required defaulted loans rates:</p>
+
+                            <ul class="flex items-center gap-2 flex-wrap">
+                              <li>Min: 0.5%</li>
+                              <li>|</li>
+                              <li>Low: 0.5%-5%</li>
+                              <li>|</li>
+                              <li>Med: 5%-15%</li>
+                              <li>|</li>
+                              <li>Optimal: 15%</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="xl:border-l border-t border-t-[#e5e5e5] xl:border-t-0 xl:border-l-[#e5e5e5] md:pl-5 xl:pl-10 pt-6 xl:pt-0">
+                        <h2 class="font-semibold text-sm leading-5 tracking-[0.1px] mb-7 xl:mb-12 pb-0.5">Distribution of target per categories in the dataset</h2>
+
+                        <div class="w-full overflow-auto whitespace-nowrap space-x-5 pb-6">
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                          <div class="inline-block border border-[#e5e5e5] p-4 max-w-xs w-full">
+                            <img src="assets/images/chart-dist.svg" alt="" class="w-full object-contain" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="border-t-[#E5E5E5]" />
+
+            <!-- -----[TABLE AND COMPANY]----- -->
+            <div class="p-4 md:p-8">
+              <h2 class="font-semibold text-base leading-5">Columns Analysis</h2>
+              <p class="font-normal text-[13px] leading-5 text-[#4f4f4f] max-w-[626px] w-full mt-4 mb-[26px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              <div class="w-full grid xl:grid-cols-2 xl:h-[600px] gap-6 xl:gap-0">
+                <div class="w-full overflow-auto border-b border-[#E5E5E5] h-[500px] xl:h-full">
+                  <table class="rounded-tr-sm w-full border border-[#e5e5e5] border-collapse">
+                    <thead class="w-full">
+                      <th class="text-sm leading-[22px] font-normal font-mont border-b border-b-[#4287DE] pl-4 md:pl-[30px] pr-4 py-3.5 bg-[#F1F8FF] text-left">Column name</th>
+                      <th class="text-sm leading-[22px] font-normal font-mont border-b border-b-[#4287DE] px-4 py-3.5 bg-[#F1F8FF] text-left">Type</th>
+                      <th class="text-sm leading-[22px] font-normal font-mont border-b border-b-[#4287DE] px-4 py-3.5 bg-[#F1F8FF] text-left">
+                        <div class="flex items-center gap-1.5">
+                          Data Leakage
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.33333 3.66665H7.66666V4.99998H6.33333V3.66665ZM6.33333 6.33331H7.66666V10.3333H6.33333V6.33331ZM7 0.333313C3.32 0.333313 0.333328 3.31998 0.333328 6.99998C0.333328 10.68 3.32 13.6666 7 13.6666C10.68 13.6666 13.6667 10.68 13.6667 6.99998C13.6667 3.31998 10.68 0.333313 7 0.333313ZM7 12.3333C4.06 12.3333 1.66666 9.93998 1.66666 6.99998C1.66666 4.05998 4.06 1.66665 7 1.66665C9.94 1.66665 12.3333 4.05998 12.3333 6.99998C12.3333 9.93998 9.94 12.3333 7 12.3333Z" fill="#4286DD" />
+                          </svg>
+                        </div>
+                      </th>
+
+                      <th class="text-sm leading-[22px] font-normal font-mont border-b border-b-[#4287DE] pr-4 md:pr-[30px] pl-4 py-3.5 bg-[#F1F8FF] text-left">
+                        <div class="flex items-center gap-1.5">
+                          Completeness
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.33333 3.66665H7.66666V4.99998H6.33333V3.66665ZM6.33333 6.33331H7.66666V10.3333H6.33333V6.33331ZM7 0.333313C3.32 0.333313 0.333328 3.31998 0.333328 6.99998C0.333328 10.68 3.32 13.6666 7 13.6666C10.68 13.6666 13.6667 10.68 13.6667 6.99998C13.6667 3.31998 10.68 0.333313 7 0.333313ZM7 12.3333C4.06 12.3333 1.66666 9.93998 1.66666 6.99998C1.66666 4.05998 4.06 1.66665 7 1.66665C9.94 1.66665 12.3333 4.05998 12.3333 6.99998C12.3333 9.93998 9.94 12.3333 7 12.3333Z" fill="#4286DD" />
+                          </svg>
+                        </div>
+                      </th>
+                    </thead>
+                    <tbody>
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">CashBalance</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">Class</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">DebtTenure</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">CreditHistory</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">CashBalance</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">Class</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">DebtTenure</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">CreditHistory</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">CashBalance</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">Class</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">DebtTenure</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">CreditHistory</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">CashBalance</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">Class</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">DebtTenure</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+
+                      <tr class="border-b border-[#e5e5e5] group transition-all duration-200 hover:bg-[#FAFAFA]">
+                        <td class="leading-4 py-3 text-xs font-mont pr-4 pl-4 font-semibold md:pl-[30px]">CreditHistory</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">Categorical</td>
+                        <td class="leading-4 py-3 text-xs font-mont px-4">No</td>
+                        <td class="leading-4 py-3 text-xs font-mont pl-4 pr-4 md:pr-[30px]">Complete</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="w-full p-4 md:p-[30px] border border-[#E5E5E5] overflow-auto">
+                  <h2 class="font-semibold text-base leading-5">FundsPurpose</h2>
+                  <p class="font-normal text-[13px] leading-5 text-[#4f4f4f] max-w-[626px] w-full mt-4 mb-[26px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <p class="flex items-center gap-2 text-[13px] text-[#010101] font-semibold mb-2.5">Distribution</p>
+                      <div class="border border-[#e5e5e5] p-2.5">
+                        <img src="assets/images/chart.svg" alt="Chart" class="w-full h-auto object-contain" />
+                      </div>
+                    </div>
+                    <div>
+                      <p class="flex items-center gap-2 text-[13px] text-[#010101] font-semibold mb-2.5">Values</p>
+
+                      <ul class="text-xs text-[#010101] space-y-1.5">
+                        <li class="flex items-center gap-3">
+                          <span class="block w-40 text-[#7f7f7f]">Least common category:</span>
+                          <span class="block">Text text</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                          <span class="block w-40 text-[#7f7f7f]">Most common category:</span>
+                          <span class="block">Text text</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                          <span class="block w-40 text-[#7f7f7f]">Number of categories:</span>
+                          <span class="block">4</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <p class="flex items-center gap-2 text-[13px] text-[#010101] font-semibold mb-2.5">Insights</p>
+                      <div class="border border-[#e5e5e5] p-2.5">
+                        <img src="assets/images/chart.svg" alt="Chart" class="w-full h-auto object-contain" />
+                      </div>
+                    </div>
+
+                    <div>
+                      <p class="flex items-center gap-2 text-[13px] text-[#010101] font-semibold mb-2.5">&ThinSpace;</p>
+                      <div class="border border-[#e5e5e5] p-2.5">
+                        <img src="assets/images/chart.svg" alt="Chart" class="w-full h-auto object-contain" />
+                      </div>
+                    </div>
+
+                    <div>
+                      <p class="flex items-center gap-2 text-[13px] text-[#010101] font-semibold mb-2.5">Insights</p>
+                      <div class="border border-[#e5e5e5] p-2.5">
+                        <img src="assets/images/chart.svg" alt="Chart" class="w-full h-auto object-contain" />
+                      </div>
+                    </div>
+
+                    <div>
+                      <p class="flex items-center gap-2 text-[13px] text-[#010101] font-semibold mb-2.5">&ThinSpace;</p>
+                      <div class="border border-[#e5e5e5] p-2.5">
+                        <img src="assets/images/chart.svg" alt="Chart" class="w-full h-auto object-contain" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-5 p-4 md:px-10 md:py-8 bg-white border-t border-[#e5e5e5] shadow-elevation">
+              <button class="text-[#4286DD] border-[#4286DD] border rounded-sm w-20 h-8 block text-center">Back</button>
+              <button class="bg-[#4286DD] text-white border-[#4286DD] border rounded-sm w-20 h-8 block text-center">Next</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- ::::::::::::::::javascript:::::::::::::::: -->
+    <script src="./assets/js/script.js"></script>
+    <script>
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const tabsParent = btn.closest(".tab-container");
+          const tabsContent = tabsParent.querySelector(".tab-content");
+          var tabsContentHeight = tabsContent.scrollHeight;
+
+          tabsParent.toggleAttribute("open");
+          if (tabsContent.hasAttribute("style")) {
+            tabsContent.removeAttribute("style");
+          } else {
+            tabsContent.style.height = `${tabsContentHeight}px`;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
