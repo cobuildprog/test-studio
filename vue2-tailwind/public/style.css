@@ -1,0 +1,69 @@
+@tailwind base;
+
+body{
+    padding:0;
+    margin:0;
+}
+/* ~~~~~~~~~~~~general setting for body~~~~~~~~~~~ */
+body {
+  @apply font-mont text-base font-normal text-[#010101] leading-[22px] w-full;
+}
+/* ~~~~~~~~~~~~special classes for heading~~~~~~~~~~~ */
+.heading-primary {
+  @apply font-bold text-lg sm:text-[22px] leading-none tracking-[0.25px];
+}
+.heading-title {
+  @apply text-[13px] leading-normal font-semibold;
+}
+
+/* ~~~~~~~~~~~~dropdown~~~~~~~~~~~ */
+.dropdown {
+  @apply opacity-0 invisible max-h-0 px-3 w-full pl-10  transform scale-y-0 transition-all duration-300 origin-top;
+}
+.dropdown-active {
+  @apply opacity-100 visible max-h-[800px] transform scale-y-100;
+}
+/* ~~~~~~~~~~~~| border|~~~~~~~~~~~ */
+.border-color {
+  @apply border-[#e5e5e5];
+}
+/* ~~~~~~~~~~~~sidebar menues~~~~~~~~~~~ */
+.main-menu-active {
+  @apply bg-blue-dark !text-white;
+}
+.sub-menu-active {
+  @apply bg-[#E6F1FC];
+}
+.tertiory-menu-active {
+  @apply bg-[#EFEFEF];
+}
+/* ~~~~~~~~~~~~clip path~~~~~~~~~~~ */
+.clip-path-box {
+  clip-path: polygon(0 0, 46% 100%, 100% 0);
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #bbbbbb #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(230, 230, 230);
+  @apply hover:bg-[#bbb];
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}
+
+@tailwind components;
+@tailwind utilities;
